@@ -29,20 +29,21 @@ async def start(thread: int, session_name: str, phone_number: str, proxy: [str, 
 
         await asyncio.sleep(random.uniform(*config.DELAYS['TASK']))
 
-    while True:
-        try:
-            clicks = random.randint(*config.CLICKS_PER_TIME)
-            if await vana.send_clicks(clicks):
-                logger.success(f"Thread {thread} | {account} | Send {clicks} clicks ({clicks/10} points)")
-            else:
-                logger.warning(f"Thread {thread} | {account} | Couldn't send {clicks} clicks")
+    if config.AUTO_CLICKS:
+        while True:
+            try:
+                clicks = random.randint(*config.CLICKS_PER_TIME)
+                if await vana.send_clicks(clicks):
+                    logger.success(f"Thread {thread} | {account} | Send {clicks} clicks ({clicks/10} points)")
+                else:
+                    logger.warning(f"Thread {thread} | {account} | Couldn't send {clicks} clicks")
 
-            await asyncio.sleep(random.uniform(*config.DELAYS['SEND_CLIKS']))
+                await asyncio.sleep(random.uniform(*config.DELAYS['SEND_CLIKS']))
 
-        except Exception as e:
-            logger.error(f"Thread {thread} | {account} | Error: {e}. Make relogin...")
-            await asyncio.sleep(15)
-            await vana.login()
+            except Exception as e:
+                logger.error(f"Thread {thread} | {account} | Error: {e}. Make relogin...")
+                await asyncio.sleep(15)
+                await vana.login()
 
     await vana.logout()
 

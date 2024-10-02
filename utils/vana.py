@@ -19,7 +19,8 @@ class Vana:
         self.account = session_name + '.session'
         self.thread = thread
 
-        self.user, self.sp = None, None
+        self.user = None
+        self.sp = config.REF_CODE
         self.proxy = f"{config.PROXY['TYPE']['REQUESTS']}://{proxy}" if proxy is not None else None
         connector = ProxyConnector.from_url(self.proxy) if proxy else aiohttp.TCPConnector(verify_ssl=False)
 
@@ -101,7 +102,6 @@ class Vana:
         attempts = 3
         while attempts:
             try:
-                self.sp = '1262949286'
                 query = await self.get_tg_web_data()
 
                 if query is None:
@@ -146,7 +146,7 @@ class Vana:
                 app=InputBotAppShortName(bot_id=await self.client.resolve_peer('VanaDataHeroBot'), short_name="VanaDataHero"),
                 platform='android',
                 write_allowed=True,
-                start_param=self.sp if False else "5190551798"
+                start_param=self.sp
             ))
             await self.client.disconnect()
             auth_url = web_view.url

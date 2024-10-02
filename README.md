@@ -1,8 +1,8 @@
 # Vana-Data-Hero-Bot
 Soft for https://t.me/VanaDataHeroBot
 
-More crypto themes and softs in telegram: [ApeCryptor](https://t.me/+_xCNXumUNWJkYjAy "ApeCryptor") 🦧
-Additional soft information: https://t.me/ApeCryptorSoft/134
+Forked by Nailambe
+Author ApeCryptor
 
 ## Functionality
 | Functional                                                       | Supported |
