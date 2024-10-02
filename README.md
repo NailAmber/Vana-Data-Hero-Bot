@@ -4,6 +4,9 @@ Soft for https://t.me/VanaDataHeroBot
 Forked by Nailambe
 Author ApeCryptor
 
+CHANGE your ref code in config.
+You can change auto-click option in config (Default - True)
+
 ## Functionality
 | Functional                                                       | Supported |
 |------------------------------------------------------------------|:---------:|
