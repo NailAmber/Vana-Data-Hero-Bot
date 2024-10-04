@@ -5,7 +5,7 @@ Forked by Nailambe
 Author ApeCryptor
 
 CHANGE your ref code in config.
-You can change auto-click option in config (Default - True)
+You can change auto-click option in config (Default - False)
 
 ## Functionality
 | Functional                                                       | Supported |
