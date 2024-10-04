@@ -5,7 +5,7 @@ API_HASH = 'dsagsdagsdg'
 
 REF_CODE = "374069367"
 
-AUTO_CLICKS = True
+AUTO_CLICKS = False
 
 DELAYS = {
     "RELOGIN": [5, 7],  # delay after a login attempt
